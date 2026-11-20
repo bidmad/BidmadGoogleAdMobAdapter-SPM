@@ -5,6 +5,9 @@ import PackageDescription
 // BidmadSDK looks up at runtime. BidmadGoogleAdMobAdapterLoader carries the dependencies a binary
 // target cannot declare, plus generated class references that keep a static
 // adapter's classes linked.
+//
+// Versions: 7.2.x works with BidmadSDK 7.2.x. The part after "+" is the
+// GoogleMobileAds version this build pins.
 let package = Package(
   name: "BidmadGoogleAdMobAdapter",
   platforms: [.iOS(.v15)],
@@ -12,7 +15,7 @@ let package = Package(
     .library(name: "BidmadGoogleAdMobAdapter", targets: ["BidmadGoogleAdMobAdapterLoader"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/bidmad/BidmadSDK-SPM.git", .upToNextMinor(from: "7.2.0-dev.1")),
+    .package(url: "https://github.com/bidmad/BidmadSDK-SPM.git", .upToNextMinor(from: "7.2.0-dev.2")),
     .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.2.0"),
   ],
   targets: [
@@ -26,8 +29,8 @@ let package = Package(
     ),
     .binaryTarget(
       name: "BidmadGoogleAdMobAdapter",
-      url: "https://github.com/bidmad/BidmadGoogleAdMobAdapter-SPM/releases/download/13.2.01600-dev.1/BidmadGoogleAdMobAdapter.xcframework.zip",
-      checksum: "75c5c24948eaaa604901982ce6b120a76566e93352d23a223a885d2250086336"
+      url: "https://github.com/bidmad/BidmadGoogleAdMobAdapter-SPM/releases/download/7.2.0-dev.2+13.2.0/BidmadGoogleAdMobAdapter.xcframework.zip",
+      checksum: "a6300b34dc52a3d99e81e012afaa28a86d362c1fc4be6a7dd81dc20e22a44b28"
     ),
   ]
 )
